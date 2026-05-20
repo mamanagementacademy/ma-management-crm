@@ -7,11 +7,12 @@
   "dependencies": {
     "@supabase/supabase-js": "latest",
     "@vitejs/plugin-react": "latest",
-    "vite": "latest",
-    "typescript": "latest",
+    "lucide-react": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "lucide-react": "latest"
+    "typescript": "latest"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "vite": "^5.2.0"
+  }
 }
