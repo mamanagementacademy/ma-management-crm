@@ -167,7 +167,7 @@ function CRM({user}){
 }
 
 function normalizeForDb(type,item,owner_id){
-  const x={...item,owner_id}
+  const x={...item,owner_id:user.id}
   delete x.created_at
   if(type==='players') return {owner_id,name:x.name,role:x.role,club:x.club,value:Number(x.value||0),contract_end:x.contract_end||x.contractEnd||null,status:x.status,notes:x.notes}
   if(type==='deals') return {owner_id,player:x.player,club:x.club,stage:x.stage,value:Number(x.value||0),commission:Number(x.commission||0),probability:Number(x.probability||0),notes:x.notes}
