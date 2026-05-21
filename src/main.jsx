@@ -198,19 +198,19 @@ function Editor({modal,onClose,onSave}){
 
 function getFields(type){
   return {
-  players:[
-  {key:'name',label:'Nome'},
-  {key:'birth_year',label:'Anno nascita'},
-  {key:'nationality',label:'Nazionalità'},
-  {key:'agent_name',label:'Nome agente'},
-  {key:'photo_url',label:'Foto Profilo'},
-  {key:'pdf_url',label:'PDF Documento'},
-  {key:'role',label:'Ruolo',type:'select',options:['Portiere','Difensore','Centrocampista','Attaccante']},
-  {key:'club',label:'Club'},
-  {key:'value',label:'Valore €'},
-  {key:'contract_end',label:'Scadenza contratto',type:'date'},
-  {key:'status',label:'Stato'},
-  {key:'notes',label:'Note',type:'textarea'}
+players:[
+ {key:'name',label:'Nome'},
+ {key:'birth_date',label:'Data nascita',type:'date'},
+ {key:'nationality',label:'Nazionalità'},
+ {key:'agent_name',label:'Nome agente'},
+ {key:'profile_photo_url',label:'Foto Profilo',type:'file',accept:'image/*',bucket:'player-photo'},
+ {key:'pdf_url',label:'PDF Documento',type:'file',accept:'application/pdf',bucket:'player-document'},
+ {key:'role',label:'Ruolo',type:'select',options:['Portiere','Difensore','Centrocampista','Attaccante']},
+ {key:'club',label:'Club'},
+ {key:'value',label:'Valore €'},
+ {key:'contract_end',label:'Scadenza contratto',type:'date'},
+ {key:'status',label:'Stato'},
+ {key:'notes',label:'Note',type:'textarea'}
 ],
     deals:[{key:'player',label:'Giocatore'},{key:'club',label:'Club'},{key:'stage',label:'Fase',type:'select',options:['Interesse','In trattativa','Offerta ricevuta','Chiusura','Saltata']},{key:'value',label:'Valore €',type:'number'},{key:'commission',label:'Commissione €',type:'number'},{key:'probability',label:'Probabilità %',type:'number'},{key:'notes',label:'Note',type:'textarea'}],
     clubs:[{key:'club',label:'Club'},{key:'contact',label:'Contatto'},{key:'role',label:'Ruolo'},{key:'phone',label:'Telefono'},{key:'email',label:'Email'},{key:'notes',label:'Note',type:'textarea'}],
