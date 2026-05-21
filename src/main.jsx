@@ -198,11 +198,13 @@ function Editor({modal,onClose,onSave}){
 
 function getFields(type){
   return {
-   players:[
+  players:[
   {key:'name',label:'Nome'},
-  {key:'age',label:'Età'},
+  {key:'birth_year',label:'Anno nascita'},
   {key:'nationality',label:'Nazionalità'},
+  {key:'agent_name',label:'Nome agente'},
   {key:'photo_url',label:'Foto Profilo'},
+  {key:'pdf_url',label:'PDF Documento'},
   {key:'role',label:'Ruolo',type:'select',options:['Portiere','Difensore','Centrocampista','Attaccante']},
   {key:'club',label:'Club'},
   {key:'value',label:'Valore €'},
