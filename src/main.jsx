@@ -198,7 +198,18 @@ function Editor({modal,onClose,onSave}){
 
 function getFields(type){
   return {
-   players:[ {key:'name',label:'Nome'}, {key:'age',label:'Età'}, {key:'nationality',label:'Nazionalità'}, {key:'photo',label:'Foto Profilo'}, {key:'role',label:'Ruolo'} ], type:'select',options:['Portiere','Difensore','Centrocampista','Esterno','Trequartista','Attaccante']},{key:'club',label:'Club'},{key:'value',label:'Valore €',type:'number'},{key:'contract_end',label:'Scadenza contratto',type:'date'},{key:'status',label:'Stato',type:'select',options:['Attivo','Da rinnovare','In scadenza','Archiviato']},{key:'notes',label:'Note',type:'textarea'}],
+   players:[
+  {key:'name',label:'Nome'},
+  {key:'age',label:'Età'},
+  {key:'nationality',label:'Nazionalità'},
+  {key:'photo_url',label:'Foto Profilo'},
+  {key:'role',label:'Ruolo',type:'select',options:['Portiere','Difensore','Centrocampista','Attaccante']},
+  {key:'club',label:'Club'},
+  {key:'value',label:'Valore €'},
+  {key:'contract_end',label:'Scadenza contratto',type:'date'},
+  {key:'status',label:'Stato'},
+  {key:'notes',label:'Note',type:'textarea'}
+],
     deals:[{key:'player',label:'Giocatore'},{key:'club',label:'Club'},{key:'stage',label:'Fase',type:'select',options:['Interesse','In trattativa','Offerta ricevuta','Chiusura','Saltata']},{key:'value',label:'Valore €',type:'number'},{key:'commission',label:'Commissione €',type:'number'},{key:'probability',label:'Probabilità %',type:'number'},{key:'notes',label:'Note',type:'textarea'}],
     clubs:[{key:'club',label:'Club'},{key:'contact',label:'Contatto'},{key:'role',label:'Ruolo'},{key:'phone',label:'Telefono'},{key:'email',label:'Email'},{key:'notes',label:'Note',type:'textarea'}],
     contracts:[{key:'player',label:'Giocatore'},{key:'type',label:'Tipo'},{key:'start_date',label:'Inizio',type:'date'},{key:'end_date',label:'Fine',type:'date'},{key:'commission',label:'Commissione'},{key:'status',label:'Stato'},{key:'notes',label:'Note',type:'textarea'}],
