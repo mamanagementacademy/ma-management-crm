@@ -71,15 +71,29 @@ function CRM({user}){
 
   useEffect(()=>{loadAll()},[])
 
-  async function saveItem(type,item){
-    const payload = normalizeForDb(type,item,user.id)
-    if(item.id){
-      await supabase.from(type).update(payload).eq('id',item.id)
-    }else{
-      await supabase.from(type).insert(payload)
-    }
-    setModal(null)
-    loadAll()
+ async function saveItem(type,item){
+  const payload = normalizeForDb(type,item,user.id)
+  console.log('SALVO:', type, payload)
+
+  let result
+
+  if(item.id){
+    result = await supabase.from(type).update(payload).eq('id',item.id)
+  }else{
+    result = await supabase.from(type).insert([payload])
+  }
+
+  console.log('RISULTATO:', result)
+
+  if(result.error){
+    alert(result.error.message)
+    return
+  }
+
+  alert('Salvato correttamente')
+  setModal(null)
+  loadAll()
+}
   }
 
   async function deleteItem(type,id){
