@@ -184,7 +184,13 @@ function normalizeForDb(type,item,owner_id){
  status:x.status,
  notes:x.notes
 }
-  if(type==='deals') return {owner_id,player:x.player,club:x.club,stage:x.stage,value:Number(x.value||0),commission:Number(x.commission||0),probability:Number(x.probability||0),notes:x.notes}
+if(type==='deals') return {
+ owner_id,
+ player:x.player,
+ club:x.club,
+ stage:x.stage,
+ value:x.value || null
+}
   if(type==='clubs') return {owner_id,club:x.club,contact:x.contact,role:x.role,phone:x.phone,email:x.email,notes:x.notes}
   if(type==='contracts') return {owner_id,player:x.player,type:x.type,start_date:x.start_date||x.start||null,end_date:x.end_date||x.end||null,commission:x.commission,status:x.status,notes:x.notes}
   if(type==='deadlines') return {owner_id,title:x.title,due_date:x.due_date||x.date||null,type:x.type,priority:x.priority,status:x.status}
